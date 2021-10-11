@@ -16,7 +16,7 @@ bbr 是 google 出的一种算法，他可以让网络传输的延迟降低，�
 
 * [拥有一台国外的服务器](##优惠购买云服务器vultr)
 * [连接服务器](##连接到你的服务器)
-* 快速搭建 ssr+bbr 脚本
+* 安装搭建 ssr+bbr 脚本
 * 开始享受使用自己的 vpn 代理服务
 
 
@@ -112,4 +112,31 @@ ssh root@xx.xx.xxx.xx
 
 <img width="772" alt="vpn搭建教程" src="https://user-images.githubusercontent.com/84239400/119024049-32963280-b992-11eb-8c05-db6df1f7fbfa.png">
 
+## 安装 ssr-bbr 搭建脚本
+
+### 安装 wget 
+
+复制如下命令到你的终端，然后回车执行安装：
+
+```
+yum install wget
+```
+## 安装 ssr-bbr 脚本
+
+```
+wget --no-check-certificate -O ssr-bbr.sh https://raw.githubusercontent.com/sucong426/ssr-bbr-vpn/main/ssr-bbr.sh
+```
+
+## 运行 ssr-bbr 脚本
+
+执行如下命令：
+
+```
+chmod +x ssr-bbr.sh 
+```
+执行安装命令：
+
+```
+ sudo sh ssr-bbr.sh -ssr
+```
 
