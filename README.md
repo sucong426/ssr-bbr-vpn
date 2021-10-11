@@ -16,8 +16,8 @@ bbr 是 google 出的一种算法，他可以让网络传输的延迟降低，�
 
 * [拥有一台国外的服务器](##优惠购买云服务器vultr)
 * [连接服务器](##连接到你的服务器)
-* 安装搭建 ssr+bbr 脚本
-* 开始享受使用自己的 vpn 代理服务
+* [安装搭建 ssr+bbr 脚本](##安装 ssr-bbr 搭建脚本)
+* [开始享受使用自己的 vpn 代理服务](##使用 ssr+bbr 服务)
 
 
 ## 优惠购买云服务器vultr
@@ -36,7 +36,7 @@ bbr 是 google 出的一种算法，他可以让网络传输的延迟降低，�
 
 ![](https://user-images.githubusercontent.com/84239400/119020042-4ee3a080-b98d-11eb-8341-bfc30f4b103c.png)
 
-进去之后你可以看到这个页面，说明你已经通过 [vultr 专属优惠链接](https://www.vultr.com/?ref=8872890-6G) 获得了 100 美元赠送的资格：
+进去之后你可以看到这个页面，说明你已经通过 [vultr 专属优惠链接](https://www.vultr.com/?ref=8944093-8H) 获得了 100 美元赠送的资格：
 
 ![](https://user-images.githubusercontent.com/84239400/119020173-733f7d00-b98d-11eb-8ecc-a1afeb556fe6.png)
 
@@ -139,4 +139,67 @@ chmod +x ssr-bbr.sh
 ```
  sudo sh ssr-bbr.sh -ssr
 ```
+
+### 设置你的 ssr 密码和端口
+
+执行过程会提醒你输入 ssr 的密码：
+
+```
+Please enter password for ShadowsocksR:
+```
+输入你自己的密码后回车。
+
+接着会提醒你输入 ssr 端口：
+
+```
+Please enter a port for ShadowsocksR [1-65535] 
+```
+随便输入一个数字回车即可。
+
+稍等一会提示 ssr 安装成功：
+
+```
+Congratulations, ShadowsocksR server install completed!
+Your Server IP        : xxx
+Your Server Port      : xxx
+Your Password         : xxx
+Your Protocol         : xxx
+Your obfs             : xxx
+```
+分别为属于你的 服务器ip地址，你的端口号，你的密码，你的协议，你的混淆方式。
+
+把它们复制下来。
+
+## 运行你的代理 ssr 服务
+现在已经安装成功了，使用如下命令开启：
+
+```
+/etc/init.d/shadowsocks start
+```
+
+## 安装 bbr 加速
+
+执行 bbr 命令：
+
+```
+ sh ssr-bbr.sh -bbr
+```
+
+稍等一会，提示按 y 重启，输入 y 回车，等待服务器重启，此时 ssr和 bbr 自动开启。
+
+那么现在你就用了属于你自己的 ssr+bbr 服务了。
+
+
+## 使用 ssr+bbr 服务
+
+### windows 系统使用
+
+1. 下载软件 [shadowsocks-windows](https://github.com/shadowsocks/shadowsocks-windows/releases/download/4.4.0.0/Shadowsocks-4.4.0.185.zip)
+2. 解压运行，把你刚刚的ip和密码端口号和加密方式填进去，打开代理。
+3. 开始访问 Google。
+
+### Android 和 ios系统使用
+1. 搜索 shadowsocks， 下载 app。
+2. 打开并填写你的服务ip地址和密码等信息。
+3. 开启代理访问
 
